@@ -45,7 +45,7 @@ print("智能索引和检索器创建成功！")
 print("正在搭建最终的问答生成链...")
 load_dotenv()
 google_api_key = os.getenv("GOOGLE_API_KEY")
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash-latest", google_api_key=google_api_key, temperature=0.3)
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key=google_api_key, temperature=0.3)
 
 # Prompt 模板，只要求 AI 回答问题，不提引用
 template = """
@@ -117,3 +117,4 @@ if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5001)) 
     # 在本地运行时，它会继续使用 5001 端口
     app.run(host='0.0.0.0', port=port, debug=False)
+
